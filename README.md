@@ -29,6 +29,7 @@ p.reload('example')
 ```
 
 ## Changelog
-* 2020.04.29    v1.0    Initial release
+* 2020.04.29    v1.0.0    Initial release
+* 2020.04.29    v1.0.1    setup.py fix for README.md
 
 On any issues, questions and suggestions contact me: Mikhail Zakharov <zmey20000@yahoo.com> 
