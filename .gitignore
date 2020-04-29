@@ -1,0 +1,7 @@
+.git  
+.idea
+build
+dist
+ltplugins.egg-info
+venv
+
