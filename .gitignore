@@ -1,8 +1,0 @@
-.git
-.gitignore
-.idea
-build
-dist
-ltplugins.egg-info
-venv
-ltplugins/__pycache__
