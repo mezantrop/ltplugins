@@ -1,4 +1,4 @@
-# LTPlugins - Lite plugins implementation for simple Python 3 projects
+# LTPlugins - Lite plugins for simple Python 3 projects
 
 ## Installation
 ```shell script

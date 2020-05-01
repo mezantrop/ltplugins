@@ -1,6 +1,6 @@
 """
 
-Lite plugins implementation for simple Python 3 projects
+Lite plugins for simple Python 3 projects
 Mikhail Zakharov <zmey20000@yahoo.com>, 2020
 
 """
