@@ -1,12 +1,15 @@
 """
 
 Lite plugins implementation for simple Python 3 projects
-Mikhail Zakharov <zmey20000@yahoo.com>, 2020.04.29
+Mikhail Zakharov <zmey20000@yahoo.com>, 2020
 
 """
 
 import os
 import sys
+
+import fnmatch
+import re
 
 
 class LTPlugins:
@@ -46,6 +49,25 @@ class LTPlugins:
         :returns: True if the plugin is loaded or False if not
         """
         return True if plugin in self.name else False
+
+    def list(self, status):
+        """
+        List plugins by their status
+
+        :param status: Takes one of: (a)ll, (l)oaded, (u)nloaded
+        :returns: a list of plugins with selected status for loaded/unloaded and a list of tuples if 'all' is selected
+        """
+
+        if status.lower() == 'l':
+            loaded = True
+        elif status.lower() == 'u':
+            loaded = False
+        else:
+            return [(plugin, self._loaded(re.search(f'{self.prefix}(.*?).py', plugin).group(1))) for plugin in
+                    os.listdir(self.plugin_path) if fnmatch.fnmatch(plugin, f'{self.prefix}*.py')]
+
+        return [plugin for plugin in os.listdir(self.plugin_path) if fnmatch.fnmatch(plugin, f'{self.prefix}*.py')
+                if self._loaded(re.search(f'{self.prefix}(.*?).py', plugin).group(1)) is loaded]
 
     def load(self, plugin):
         """
