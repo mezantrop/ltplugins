@@ -1,6 +1,6 @@
 about = {
     'name': 'ltplugins',
-    'version': '1.1.3',
+    'version': '1.1.4',
     'py_modules': ['ltplugins.ltplugins', 'ltplugins.__about__'],
     'url': 'https://github.com/mezantrop/ltplugins',
     'license': 'bsd-2-clause',

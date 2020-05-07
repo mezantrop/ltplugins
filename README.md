@@ -22,6 +22,7 @@ import ltplugins
 p = ltplugins.LTPlugins(prefix='ltp_', path='plugins')
 p.load('example')
 p.load('test')
+p.list(state='a', status=True)
 p.name['example'].main('123', a=456)
 p.run('test', 'main', '789', a=123)
 p.unload('test')
@@ -38,5 +39,6 @@ p.reload('example')
 | 2020.05.01 | v1.1.1  | Readme update                              |
 | 2020.05.07 | v1.1.2  | Default status='a' in LTPlugins.list()     |
 | 2020.05.07 | v1.1.3  | LTPlugins.list() now returns module names  |
+| 2020.05.07 | v1.1.4  | LTPlugins.list(state='a', status=False)    |
 
 On any issues, questions and suggestions contact me: Mikhail Zakharov <zmey20000@yahoo.com> 

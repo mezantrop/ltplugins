@@ -50,11 +50,12 @@ class LTPlugins:
         """
         return True if plugin in self.name else False
 
-    def list(self, status='a'):
+    def list(self, state='a', status=False):
         """
         List plugins by their status
 
-        :param status: Takes one of: (a)ll, (l)oaded, (u)nloaded
+        :param state: Takes one of: (a)ll, (l)oaded, (u)nloaded
+        :param status: Show plugin status as tuple or not when listing output
         :returns: a list of plugins with selected status for loaded/unloaded and a list of tuples if 'all' is selected
         """
 
@@ -63,14 +64,12 @@ class LTPlugins:
             plugin_name = re.search(f'{self.prefix}(.*?).py', plugin)
             if plugin_name:
                 name = plugin_name.group(1)
-                if status.lower() == 'a':
-                    result.append((name, self._loaded(name)))
-                elif status.lower() == 'l':
-                    if self._loaded(name):
-                        result.append(name)
-                elif status.lower() == 'u':
-                    if not self._loaded(name):
-                        result.append(name)
+                if state.lower() == 'l' and self._loaded(name):
+                    result.append(status and (name, self._loaded(name)) or name)
+                elif state.lower() == 'u' and not self._loaded(name):
+                    result.append(status and (name, self._loaded(name)) or name)
+                else:
+                    result.append(status and (name, self._loaded(name)) or name)
 
         return result
 
