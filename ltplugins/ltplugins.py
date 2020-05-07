@@ -58,16 +58,21 @@ class LTPlugins:
         :returns: a list of plugins with selected status for loaded/unloaded and a list of tuples if 'all' is selected
         """
 
-        if status.lower() == 'l':
-            loaded = True
-        elif status.lower() == 'u':
-            loaded = False
-        else:
-            return [(plugin, self._loaded(re.search(f'{self.prefix}(.*?).py', plugin).group(1))) for plugin in
-                    os.listdir(self.plugin_path) if fnmatch.fnmatch(plugin, f'{self.prefix}*.py')]
+        result = []
+        for plugin in os.listdir(self.plugin_path):
+            plugin_name = re.search(f'{self.prefix}(.*?).py', plugin)
+            if plugin_name:
+                name = plugin_name.group(1)
+                if status.lower() == 'a':
+                    result.append((name, self._loaded(name)))
+                elif status.lower() == 'l':
+                    if self._loaded(name):
+                        result.append(name)
+                elif status.lower() == 'u':
+                    if not self._loaded(name):
+                        result.append(name)
 
-        return [plugin for plugin in os.listdir(self.plugin_path) if fnmatch.fnmatch(plugin, f'{self.prefix}*.py')
-                if self._loaded(re.search(f'{self.prefix}(.*?).py', plugin).group(1)) is loaded]
+        return result
 
     def load(self, plugin):
         """
