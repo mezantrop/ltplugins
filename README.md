@@ -31,14 +31,15 @@ p.reload('example')
 
 ## Changelog
 
-| Date       | Version | Remarks                                    |
-| ---------- | ------- | ------------------------------------------ |
-| 2020.04.29 | v1.0.0  | Initial release                            |
-| 2020.04.29 | v1.0.1  | setup.py fix for README.md                 |
-| 2020.05.01 | v1.1.0  | List modules: all, loaded and unloaded     |
-| 2020.05.01 | v1.1.1  | Readme update                              |
-| 2020.05.07 | v1.1.2  | Default status='a' in LTPlugins.list()     |
-| 2020.05.07 | v1.1.3  | LTPlugins.list() now returns module names  |
-| 2020.05.07 | v1.1.4  | LTPlugins.list(state='a', status=False)    |
+| Date       | Version  | Remarks                                    |
+| ---------- | -------- | ------------------------------------------ |
+| 2020.04.29 | v1.0.0   | Initial release                            |
+| 2020.04.29 | v1.0.1   | setup.py fix for README.md                 |
+| 2020.05.01 | v1.1.0   | List modules: all, loaded and unloaded     |
+| 2020.05.01 | v1.1.1   | Readme update                              |
+| 2020.05.07 | v1.1.2   | Default status='a' in LTPlugins.list()     |
+| 2020.05.07 | v1.1.3   | LTPlugins.list() now returns module names  |
+| 2020.05.07 | v1.1.4   | LTPlugins.list(state='a', status=False)    |
+| 2020.05.07 | v1.1.4.1 | fnmatch module reference removed           |
 
 On any issues, questions and suggestions contact me: Mikhail Zakharov <zmey20000@yahoo.com> 

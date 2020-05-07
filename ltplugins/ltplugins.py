@@ -8,7 +8,6 @@ Mikhail Zakharov <zmey20000@yahoo.com>, 2020
 import os
 import sys
 
-import fnmatch
 import re
 
 
