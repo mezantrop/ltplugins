@@ -50,7 +50,7 @@ class LTPlugins:
         """
         return True if plugin in self.name else False
 
-    def list(self, status):
+    def list(self, status='a'):
         """
         List plugins by their status
 
