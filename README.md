@@ -41,5 +41,6 @@ p.reload('example')
 | 2020.05.07 | v1.1.3   | LTPlugins.list() now returns module names  |
 | 2020.05.07 | v1.1.4   | LTPlugins.list(state='a', status=False)    |
 | 2020.05.07 | v1.1.4.1 | fnmatch module reference removed           |
+| 2020.05.07 | v1.1.5   | Dummy release to make PyPI happy           |
 
 On any issues, questions and suggestions contact me: Mikhail Zakharov <zmey20000@yahoo.com> 
