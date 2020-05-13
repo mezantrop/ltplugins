@@ -6,7 +6,7 @@ pip install ltplugins
 ```
 
 ## Usage examples
-Imagine there is a directory **plugins** with two scripts: **ltp_example.py** and **ltp_test.py**
+Imagine, there is a directory **plugins** with two scripts: **ltp_example.py** and **ltp_test.py**
 For simplicity they contain a single **main** function:
 
 ```python
